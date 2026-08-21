@@ -24,10 +24,9 @@ export const brands: Brand[] = [
     domain: 'StartingGLP.com',
     url: 'https://StartingGLP.com',
     category: 'Metabolic health',
-    headline:
-      'Test first, discuss treatment, then prescribe — responsible weight-loss treatment.',
+    headline: 'Test First, Then Prescribe.',
     blurb:
-      'Physician-guided GLP-1 programs that make sustainable metabolic change simple, measured, and supported.',
+      'Get a free GLP baseline lab test and a physician consultation included with your treatment plan. If GLP-1 treatment is medically appropriate, your physician can prescribe based on your labs, medications, health history, and goals — not just a five-minute questionnaire.',
     video: '/videos/womanrunning.mp4',
     accent: 'text-brand-glp',
     accentHex: '#1fae7a',
