@@ -58,7 +58,7 @@ export const brands: Brand[] = [
     comingSoon: true,
     blurb:
       'Comprehensive lab testing and clinician-managed TRT protocols built to restore energy, strength, and focus.',
-    video: '/videos/menwoman.mp4',
+    video: '/videos/trt.mp4',
     accent: 'text-brand-trt',
     accentHex: '#d68b2a',
   },
