@@ -24,10 +24,9 @@ export const brands: Brand[] = [
     domain: 'StartingGLP.com',
     url: 'https://StartingGLP.com',
     category: 'Metabolic health',
-    headline:
-      'Test first, discuss treatment, then prescribe — responsible weight-loss treatment.',
+    headline: 'Test First, Then Prescribe.',
     blurb:
-      'Physician-guided GLP-1 programs that make sustainable metabolic change simple, measured, and supported.',
+      'Get a free GLP baseline lab test and a physician consultation included with your treatment plan. If GLP-1 treatment is medically appropriate, your physician can prescribe based on your labs, medications, health history, and goals — not just a five-minute questionnaire.',
     video: '/videos/womanrunning.mp4',
     accent: 'text-brand-glp',
     accentHex: '#1fae7a',
@@ -43,7 +42,7 @@ export const brands: Brand[] = [
       'Test first, discuss treatment, then prescribe — responsible Peptide treatment.',
     comingSoon: true,
     blurb:
-      'Next-generation peptide therapies for recovery, performance, and healthy longevity — prescribed responsibly.',
+      'Lab first and physician-guided next generation peptide therapies for recovery, performance, and healthy longevity — prescribed responsibly.',
     video: '/videos/woman2.mp4',
     accent: 'text-brand-peptide',
     accentHex: '#4f6ff0',
@@ -58,7 +57,7 @@ export const brands: Brand[] = [
     headline: 'Doctor-trusted Testosterone Therapy Medications.',
     comingSoon: true,
     blurb:
-      'Comprehensive testing and clinician-managed TRT protocols built to restore energy, strength, and focus.',
+      'Comprehensive lab testing and clinician-managed TRT protocols built to restore energy, strength, and focus.',
     video: '/videos/menwoman.mp4',
     accent: 'text-brand-trt',
     accentHex: '#d68b2a',

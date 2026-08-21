@@ -5,7 +5,7 @@ export function Portfolio() {
     <section id="portfolio" className="mx-auto max-w-[1600px] px-5 py-24 md:px-10 md:py-32">
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <h2 className="max-w-2xl text-balance font-display text-3xl font-extrabold tracking-tight text-ink md:text-5xl">
-          Three focused brands, one operating engine.
+          Focused brands, one operating engine.
         </h2>
       </div>
 

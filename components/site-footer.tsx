@@ -68,7 +68,6 @@ export function SiteFooter() {
 
       <div className="mt-16 flex flex-col gap-3 border-t border-ink/10 pt-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
         <p>© {new Date().getFullYear()} Starting.Health. All rights reserved.</p>
-        <p>Medical services provided by affiliated licensed providers.</p>
       </div>
     </footer>
   )

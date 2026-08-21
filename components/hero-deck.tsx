@@ -114,6 +114,9 @@ export function HeroDeck() {
             <h1 className="text-balance font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-white md:text-6xl lg:text-7xl">
               {brand.headline}
             </h1>
+            <p className="mt-5 max-w-xl text-pretty text-sm leading-relaxed text-white/85 md:text-base">
+              {brand.blurb}
+            </p>
             {brand.comingSoon ? (
               <div className="pointer-events-auto mt-8 inline-flex items-center gap-3 text-white">
                 <span className="font-display text-lg font-bold">{brand.wordmark}</span>
