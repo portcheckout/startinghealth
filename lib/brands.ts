@@ -27,7 +27,7 @@ export const brands: Brand[] = [
     headline: 'Test First, Then Prescribe.',
     blurb:
       'Get a free GLP baseline lab test and a physician consultation included with your treatment plan. If GLP-1 treatment is medically appropriate, your physician can prescribe based on your labs, medications, health history, and goals — not just a five-minute questionnaire.',
-    video: '/videos/womanrunning.mp4',
+    video: '/videos/starting-glp-home-video-0.mp4',
     accent: 'text-brand-glp',
     accentHex: '#1fae7a',
   },
