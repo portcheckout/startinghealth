@@ -27,7 +27,7 @@ export const brands: Brand[] = [
     headline: 'Test First, Then Prescribe.',
     blurb:
       'Get a free GLP baseline lab test and a physician consultation included with your treatment plan. If GLP-1 treatment is medically appropriate, your physician can prescribe based on your labs, medications, health history, and goals — not just a five-minute questionnaire.',
-    video: '/videos/womanrunning.mp4',
+    video: '/videos/starting-glp-home-video-0.mp4',
     accent: 'text-brand-glp',
     accentHex: '#1fae7a',
   },
@@ -43,7 +43,7 @@ export const brands: Brand[] = [
     comingSoon: true,
     blurb:
       'Lab first and physician-guided next generation peptide therapies for recovery, performance, and healthy longevity — prescribed responsibly.',
-    video: '/videos/woman2.mp4',
+    video: '/videos/peptides.mp4',
     accent: 'text-brand-peptide',
     accentHex: '#4f6ff0',
   },
@@ -58,7 +58,7 @@ export const brands: Brand[] = [
     comingSoon: true,
     blurb:
       'Comprehensive lab testing and clinician-managed TRT protocols built to restore energy, strength, and focus.',
-    video: '/videos/menwoman.mp4',
+    video: '/videos/trt.mp4',
     accent: 'text-brand-trt',
     accentHex: '#d68b2a',
   },
