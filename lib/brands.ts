@@ -43,7 +43,7 @@ export const brands: Brand[] = [
     comingSoon: true,
     blurb:
       'Lab first and physician-guided next generation peptide therapies for recovery, performance, and healthy longevity — prescribed responsibly.',
-    video: '/videos/woman2.mp4',
+    video: '/videos/peptides.mp4',
     accent: 'text-brand-peptide',
     accentHex: '#4f6ff0',
   },
