@@ -61,14 +61,20 @@ export function HeroDeck() {
     }
   }, [index, paused])
 
+  // Pause only while the tab is in the background, so the deck keeps
+  // rotating whenever the visitor is actually looking at it.
+  useEffect(() => {
+    const onVisibility = () => setPaused(document.hidden)
+    document.addEventListener('visibilitychange', onVisibility)
+    return () => document.removeEventListener('visibilitychange', onVisibility)
+  }, [])
+
   const brand = brands[index]
 
   return (
     <section
       id="top"
       className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-ink"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
       style={{ perspective: '1600px' }}
     >
       {/* Flipping card — remounts on index change to replay the flip */}
@@ -159,7 +165,11 @@ export function HeroDeck() {
       </div>
 
       {/* Deck controls */}
-      <div className="absolute bottom-6 right-5 z-10 flex items-center gap-4 md:right-10 md:bottom-8">
+      <div
+        className="absolute bottom-6 right-5 z-10 flex items-center gap-4 md:right-10 md:bottom-8"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
         <button
           type="button"
           onClick={() => go(index - 1)}
