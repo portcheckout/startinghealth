@@ -14,6 +14,8 @@ export type Brand = {
   accentHex: string
   /** brand not yet launched */
   comingSoon?: boolean
+  /** target launch window shown in place of a link, e.g. "Q2 2027" */
+  launch?: string
 }
 
 export const brands: Brand[] = [
@@ -41,6 +43,7 @@ export const brands: Brand[] = [
     headline:
       'Test first, discuss treatment, then prescribe — responsible Peptide treatment.',
     comingSoon: true,
+    launch: 'Q2 2027',
     blurb:
       'Lab first and physician-guided next generation peptide therapies for recovery, performance, and healthy longevity — prescribed responsibly.',
     video: '/videos/peptides.mp4',
@@ -56,6 +59,7 @@ export const brands: Brand[] = [
     category: "Men's hormone health",
     headline: 'Doctor-trusted Testosterone Therapy Medications.',
     comingSoon: true,
+    launch: 'Q4 2027',
     blurb:
       'Comprehensive lab testing and clinician-managed TRT protocols built to restore energy, strength, and focus.',
     video: '/videos/trt.mp4',

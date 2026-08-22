@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { brands } from '@/lib/brands'
 
 export function SiteFooter() {
@@ -32,7 +33,7 @@ export function SiteFooter() {
                   <span className="inline-flex items-center gap-2 font-display font-semibold text-muted-foreground">
                     {b.domain}
                     <span className="rounded-full border border-ink/15 px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.15em]">
-                      Soon
+                      {b.launch ?? 'Soon'}
                     </span>
                   </span>
                 ) : (
@@ -54,12 +55,28 @@ export function SiteFooter() {
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
             Get in touch
           </p>
-          <a
-            href="mailto:hello@starting.health"
-            className="font-display font-semibold text-ink transition-colors hover:text-muted-foreground"
-          >
-            hello@starting.health
-          </a>
+          {/* The "@" is the unlisted entry point to the investor deck. */}
+          <span className="inline-flex items-baseline font-display font-semibold text-ink">
+            <a
+              href="mailto:hello@starting.health"
+              className="transition-colors hover:text-muted-foreground"
+            >
+              hello
+            </a>
+            <Link
+              href="/deck"
+              aria-label="Investor deck"
+              className="transition-colors hover:text-brand-glp"
+            >
+              @
+            </Link>
+            <a
+              href="mailto:hello@starting.health"
+              className="transition-colors hover:text-muted-foreground"
+            >
+              starting.health
+            </a>
+          </span>
           <p className="mt-3 text-sm text-muted-foreground">
             For partnership & investment inquiries.
           </p>

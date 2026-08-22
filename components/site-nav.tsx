@@ -126,7 +126,7 @@ export function SiteNav() {
                   >
                     <span className="font-display text-lg font-bold text-ink">{b.wordmark}</span>
                     <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
-                      Coming soon
+                      {b.launch ?? 'Coming soon'}
                     </span>
                   </div>
                 ) : (
