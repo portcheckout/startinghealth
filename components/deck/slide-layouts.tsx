@@ -485,13 +485,7 @@ ${b.revenue.toFixed(1)}M / ${b.profit.toFixed(1)}M
                     style={{ backgroundColor: it.accent }}
                     aria-hidden="true"
                   />
-                  <p className="mt-6 font-display text-xl font-extrabold tracking-tight text-ink md:text-2xl">
-                    {it.name}
-                  </p>
-                  <p
-                    className="mt-2 font-mono text-xs tracking-tight"
-                    style={{ color: it.accent }}
-                  >
+                  <p className="mt-6 text-balance font-display text-xl font-extrabold tracking-tight text-ink md:text-2xl">
                     {it.domain}
                   </p>
                   <p className="mt-3 text-sm text-ink/65">{it.category}</p>
