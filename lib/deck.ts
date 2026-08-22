@@ -142,7 +142,7 @@ export const slides: Slide[] = [
   {
     kind: 'cover',
     id: 'cover',
-    eyebrow: 'Family office investment opportunity',
+    eyebrow: 'Investment opportunity',
     title: 'A holding company for modern direct-to-patient health brands.',
     body: 'Starting.Health builds brands that combine clinical rigor, at-home diagnostics, telehealth, pharmacy fulfillment, and recurring treatment programs — beginning with StartingGLP.',
     stats: [
@@ -360,7 +360,7 @@ export const slides: Slide[] = [
       },
     ],
     focus:
-      'Family office diligence focus: verify sustainable CAC, medical eligibility conversion, medication cost, prepaid renewal, and month-3 / month-6 retention by cohort.',
+      'Diligence focus: verify sustainable CAC, medical eligibility conversion, medication cost, prepaid renewal, and month-3 / month-6 retention by cohort.',
     source: 'Management model assumptions.',
   },
   {
@@ -374,19 +374,19 @@ export const slides: Slide[] = [
         name: 'StartingGLP',
         category: 'Metabolic health',
         status: 'Live / first brand',
-        accent: '#1fae7a',
+        accent: '#0d7a52',
       },
       {
         name: 'Starting Peptide',
         category: 'Recovery, performance, longevity',
         status: 'Next roadmap brand',
-        accent: '#4f6ff0',
+        accent: '#3350cf',
       },
       {
         name: 'Starting TRT',
         category: 'Energy, strength, focus',
         status: 'Next roadmap brand',
-        accent: '#d68b2a',
+        accent: '#9a5c14',
       },
     ],
     source: 'Starting.Health site portfolio and roadmap; management execution plan.',
@@ -399,7 +399,7 @@ export const slides: Slide[] = [
     title: 'Fund the operating engine, not a single campaign.',
     askValue: '$750K',
     askNote:
-      'For 10% equity. Flexible structure for family-office investors: equity, SAFE / convertible note, or strategic growth capital.',
+      'For 10% equity. Flexible structure to fit the investor: equity, SAFE / convertible note, or strategic growth capital.',
     useLabel: 'Primary use of proceeds',
     uses: [
       'Patient acquisition for StartingGLP — 80% of proceeds',

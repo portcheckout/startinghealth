@@ -66,9 +66,9 @@ export function DeckViewer() {
   const accent = accentFor(active)
 
   return (
-    <div className="relative bg-ink">
+    <div className="relative bg-background">
       {/* Top bar */}
-      <header className="pointer-events-none fixed inset-x-0 top-0 z-30 flex items-center justify-between bg-ink/85 px-6 py-6 backdrop-blur-sm md:bg-transparent md:px-16 md:backdrop-blur-none">
+      <header className="pointer-events-none fixed inset-x-0 top-0 z-30 flex items-center justify-between bg-background/85 px-6 py-6 backdrop-blur-sm md:bg-transparent md:px-16 md:backdrop-blur-none">
         <Link
           href="/"
           className="pointer-events-auto flex items-center gap-3 transition-opacity hover:opacity-60"
@@ -78,18 +78,18 @@ export function DeckViewer() {
             <span className="w-[5px] rounded-full bg-brand-trt" />
             <span className="w-[5px] rounded-full bg-brand-peptide" />
           </span>
-          <span className="font-display text-sm font-extrabold tracking-tight text-white">
+          <span className="font-display text-sm font-extrabold tracking-tight text-ink">
             STARTING<span className="opacity-40">.</span>HEALTH
           </span>
         </Link>
 
         <div className="pointer-events-auto flex items-center gap-6">
-          <span className="hidden font-mono text-[10px] uppercase tracking-[0.25em] text-white/40 md:inline">
+          <span className="hidden font-mono text-[10px] uppercase tracking-[0.25em] text-ink/55 md:inline">
             Confidential — investor deck
           </span>
-          <span className="font-mono text-[11px] tabular-nums text-white/70">
+          <span className="font-mono text-[11px] tabular-nums text-ink/75">
             <span style={{ color: accent }}>{String(active + 1).padStart(2, '0')}</span>
-            <span className="text-white/30"> / {String(total).padStart(2, '0')}</span>
+            <span className="text-ink/45"> / {String(total).padStart(2, '0')}</span>
           </span>
         </div>
       </header>
@@ -113,7 +113,7 @@ export function DeckViewer() {
               style={{
                 width: i === active ? '0.4rem' : '0.3rem',
                 height: i === active ? '1.35rem' : '0.3rem',
-                backgroundColor: i === active ? accent : 'rgba(255,255,255,0.25)',
+                backgroundColor: i === active ? accent : 'rgba(23,26,33,0.22)',
               }}
             />
           </button>
@@ -137,7 +137,7 @@ export function DeckViewer() {
         className="pointer-events-none fixed bottom-7 left-1/2 z-30 hidden -translate-x-1/2 transition-opacity duration-500 md:block"
         style={{ opacity: active === 0 ? 1 : 0 }}
       >
-        <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
+        <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/55">
           Scroll
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
             <path

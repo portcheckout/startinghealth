@@ -1,14 +1,15 @@
 import type { Slide } from '@/lib/deck'
 
-/* Accent cycles through the three portfolio brand colors. */
-const ACCENTS = ['#1fae7a', '#4f6ff0', '#d68b2a']
+/* Accent cycles through the three portfolio brand colors, darkened so they
+   hold contrast against the light paper background. */
+const ACCENTS = ['#0d7a52', '#3350cf', '#9a5c14']
 export function accentFor(i: number) {
   return ACCENTS[i % ACCENTS.length]
 }
 
 function Eyebrow({ text, accent }: { text: string; accent: string }) {
   return (
-    <p className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-white/50">
+    <p className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.3em] text-ink/65">
       <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: accent }} />
       {text}
     </p>
@@ -17,7 +18,7 @@ function Eyebrow({ text, accent }: { text: string; accent: string }) {
 
 function Source({ text }: { text: string }) {
   return (
-    <p className="mt-10 font-mono text-[10px] leading-relaxed text-white/25 md:absolute md:bottom-0 md:left-0 md:right-0 md:mt-0">
+    <p className="mt-10 font-mono text-[10px] leading-relaxed text-ink/45 md:absolute md:bottom-0 md:left-0 md:right-0 md:mt-0">
       Sources: {text}
     </p>
   )
@@ -36,7 +37,7 @@ function Shell({
       {chapter ? (
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute -right-6 bottom-[-4rem] select-none font-display text-[22rem] font-extrabold leading-none text-white/[0.035] md:-right-10 md:text-[34rem]"
+          className="pointer-events-none absolute -right-6 bottom-[-4rem] select-none font-display text-[22rem] font-extrabold leading-none text-ink/[0.025] md:-right-10 md:text-[34rem]"
         >
           {chapter}
         </span>
@@ -48,7 +49,7 @@ function Shell({
 
 function Title({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mt-6 max-w-4xl text-balance font-display text-3xl font-extrabold leading-[1.05] tracking-tight text-white md:text-5xl lg:text-[3.4rem]">
+    <h2 className="mt-6 max-w-4xl text-balance font-display text-3xl font-extrabold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-[3.4rem]">
       {children}
     </h2>
   )
@@ -63,14 +64,14 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
       return (
         <Shell>
           <div className="flex flex-1 flex-col justify-center">
-            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-white/40">
+            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/58">
               {slide.eyebrow}
             </p>
 
-            <h1 className="mt-8 max-w-5xl text-balance font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-white md:text-6xl lg:text-7xl">
+            <h1 className="mt-8 max-w-5xl text-balance font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-ink md:text-6xl lg:text-7xl">
               {slide.title}
             </h1>
-            <p className="mt-7 max-w-2xl text-pretty leading-relaxed text-white/60 md:text-lg">
+            <p className="mt-7 max-w-2xl text-pretty leading-relaxed text-ink/70 md:text-lg">
               {slide.body}
             </p>
 
@@ -83,7 +84,7 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
                   >
                     {s.value}
                   </p>
-                  <p className="mt-2 max-w-[13rem] font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
+                  <p className="mt-2 max-w-[13rem] font-mono text-[11px] uppercase tracking-[0.18em] text-ink/60">
                     {s.label}
                   </p>
                 </div>
@@ -103,18 +104,18 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
           <Title>{slide.title}</Title>
           <div className="mt-12 grid grid-cols-2 gap-x-10 gap-y-10 lg:grid-cols-4">
             {slide.stats.map((s) => (
-              <div key={s.label} className="border-t border-white/15 pt-5">
+              <div key={s.label} className="border-t border-ink/18 pt-5">
                 <p
                   className="font-display text-3xl font-extrabold tracking-tight md:text-[2.75rem]"
                   style={{ color: accent }}
                 >
                   {s.value}
                 </p>
-                <p className="mt-3 text-pretty text-sm leading-relaxed text-white/50">{s.label}</p>
+                <p className="mt-3 text-pretty text-sm leading-relaxed text-ink/65">{s.label}</p>
               </div>
             ))}
           </div>
-          <p className="mt-12 max-w-3xl text-pretty leading-relaxed text-white/60">{slide.body}</p>
+          <p className="mt-12 max-w-3xl text-pretty leading-relaxed text-ink/70">{slide.body}</p>
           <Source text={slide.source} />
         </Shell>
       )
@@ -127,19 +128,19 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
           <Title>{slide.title}</Title>
           <div className="mt-10 grid flex-1 grid-cols-1 gap-10 lg:grid-cols-[1fr_1.6fr]">
             <div>
-              <p className="font-display text-2xl font-extrabold tracking-tight text-white md:text-3xl">
+              <p className="font-display text-2xl font-extrabold tracking-tight text-ink md:text-3xl">
                 {slide.name}
               </p>
               <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.25em]" style={{ color: accent }}>
                 {slide.role}
               </p>
-              <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.2em] text-white/35">
+              <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/52">
                 {slide.note}
               </p>
             </div>
-            <div className="space-y-5 border-l border-white/15 pl-0 lg:pl-10">
+            <div className="space-y-5 border-l border-ink/18 pl-0 lg:pl-10">
               {slide.paragraphs.map((p, i) => (
-                <p key={i} className="text-pretty text-sm leading-relaxed text-white/60 md:text-base">
+                <p key={i} className="text-pretty text-sm leading-relaxed text-ink/70 md:text-base">
                   {p}
                 </p>
               ))}
@@ -157,16 +158,16 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
           <Title>{slide.title}</Title>
           <div className="mt-12 grid flex-1 grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
-              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/40">
+              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/58">
                 {slide.leftLabel}
               </p>
               <ul className="mt-6 space-y-4">
                 {slide.left.map((item) => (
                   <li
                     key={item}
-                    className="flex gap-4 border-t border-white/10 pt-4 text-sm leading-relaxed text-white/45"
+                    className="flex gap-4 border-t border-ink/14 pt-4 text-sm leading-relaxed text-ink/60"
                   >
-                    <span className="mt-2 h-px w-4 shrink-0 bg-white/25" aria-hidden="true" />
+                    <span className="mt-2 h-px w-4 shrink-0 bg-ink/40" aria-hidden="true" />
                     {item}
                   </li>
                 ))}
@@ -182,7 +183,7 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
               >
                 {slide.rightLabel}
               </p>
-              <p className="mt-6 text-balance font-display text-xl font-bold leading-snug text-white md:text-2xl">
+              <p className="mt-6 text-balance font-display text-xl font-bold leading-snug text-ink md:text-2xl">
                 {slide.right}
               </p>
             </div>
@@ -199,14 +200,14 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
           <Title>{slide.title}</Title>
           <div className="mt-12 grid flex-1 grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
             <div>
-              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/40">
+              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/58">
                 {slide.label}
               </p>
               <ul className="mt-6">
                 {slide.items.map((item, i) => (
                   <li
                     key={item}
-                    className="flex items-baseline gap-5 border-t border-white/10 py-4 text-white/70"
+                    className="flex items-baseline gap-5 border-t border-ink/14 py-4 text-ink/75"
                   >
                     <span
                       className="font-mono text-[11px] tabular-nums"
@@ -219,7 +220,7 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
                 ))}
               </ul>
             </div>
-            <p className="text-balance font-display text-lg font-bold leading-snug text-white/80 md:text-2xl">
+            <p className="text-balance font-display text-lg font-bold leading-snug text-ink/80 md:text-2xl">
               {slide.kicker}
             </p>
           </div>
@@ -243,7 +244,7 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
               </p>
               <ul className="mt-8 space-y-3">
                 {slide.features.map((f) => (
-                  <li key={f} className="flex gap-4 text-sm leading-relaxed text-white/60">
+                  <li key={f} className="flex gap-4 text-sm leading-relaxed text-ink/70">
                     <span
                       className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 rounded-full"
                       style={{ backgroundColor: accent }}
@@ -256,25 +257,25 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
               <div className="mt-9 flex flex-wrap gap-x-10 gap-y-4">
                 {slide.prices.map((p) => (
                   <div key={p.term}>
-                    <p className="font-display text-2xl font-extrabold tracking-tight text-white">
+                    <p className="font-display text-2xl font-extrabold tracking-tight text-ink">
                       {p.amount}
                     </p>
-                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink/58">
                       {p.term}
                     </p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="border-t border-white/15 pt-6 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
-              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/40">
+            <div className="border-t border-ink/18 pt-6 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
+              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/58">
                 {slide.designLabel}
               </p>
               <ul className="mt-6 space-y-5">
                 {slide.design.map((d) => (
                   <li
                     key={d}
-                    className="text-pretty text-sm leading-relaxed text-white/60 md:text-base"
+                    className="text-pretty text-sm leading-relaxed text-ink/70 md:text-base"
                   >
                     {d}
                   </li>
@@ -298,20 +299,20 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
                 <p className="font-mono text-[11px] tabular-nums" style={{ color: accent }}>
                   {s.n}
                 </p>
-                <p className="mt-3 font-display text-sm font-bold leading-tight text-white md:text-base">
+                <p className="mt-3 font-display text-sm font-bold leading-tight text-ink md:text-base">
                   {s.title}
                 </p>
-                <p className="mt-2 text-pretty text-xs leading-relaxed text-white/45">{s.body}</p>
+                <p className="mt-2 text-pretty text-xs leading-relaxed text-ink/60">{s.body}</p>
               </div>
             ))}
           </div>
           <div className="mt-12">
-            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/40">
+            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/58">
               {slide.kickerLabel}
             </p>
             <div className="mt-5 flex flex-wrap gap-x-10 gap-y-3">
               {slide.kicker.map((k) => (
-                <p key={k} className="text-sm leading-relaxed text-white/60">
+                <p key={k} className="text-sm leading-relaxed text-ink/70">
                   {k}
                 </p>
               ))}
@@ -331,7 +332,7 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
             {slide.rungs.map((r) => (
               <li
                 key={r.n}
-                className="grid grid-cols-[auto_1fr] items-baseline gap-x-6 gap-y-1 border-t border-white/10 py-4 md:grid-cols-[auto_1.1fr_1fr_auto]"
+                className="grid grid-cols-[auto_1fr] items-baseline gap-x-6 gap-y-1 border-t border-ink/14 py-4 md:grid-cols-[auto_1.1fr_1fr_auto]"
               >
                 <span
                   className="font-display text-xl font-extrabold tabular-nums"
@@ -339,17 +340,17 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
                 >
                   {r.n}
                 </span>
-                <span className="font-display text-base font-bold text-white md:text-lg">
+                <span className="font-display text-base font-bold text-ink md:text-lg">
                   {r.title}
                 </span>
-                <span className="col-start-2 text-sm text-white/50 md:col-start-3">{r.detail}</span>
-                <span className="col-start-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/35 md:col-start-4 md:text-right">
+                <span className="col-start-2 text-sm text-ink/65 md:col-start-3">{r.detail}</span>
+                <span className="col-start-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/52 md:col-start-4 md:text-right">
                   {r.tag}
                 </span>
               </li>
             ))}
           </ul>
-          <p className="mt-8 max-w-3xl text-balance font-display text-lg font-bold leading-snug text-white/80 md:text-xl">
+          <p className="mt-8 max-w-3xl text-balance font-display text-lg font-bold leading-snug text-ink/80 md:text-xl">
             {slide.principle}
           </p>
           <Source text={slide.source} />
@@ -366,12 +367,12 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
           <div className="mt-10 grid flex-1 grid-cols-1 gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
             <div>
               <div className="flex items-center gap-6">
-                <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
+                <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/65">
                   <span className="h-2 w-4 rounded-sm" style={{ backgroundColor: accent }} />
                   Revenue
                 </span>
-                <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
-                  <span className="h-2 w-4 rounded-sm bg-white/30" />
+                <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink/65">
+                  <span className="h-2 w-4 rounded-sm bg-ink/40" />
                   Contribution profit
                 </span>
               </div>
@@ -379,10 +380,10 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
                 {slide.bars.map((b) => (
                   <div key={b.label}>
                     <div className="flex items-baseline justify-between">
-                      <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/60">
+                      <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/70">
                         {b.label}
                       </p>
-                      <p className="font-mono text-[11px] tabular-nums text-white/40">
+                      <p className="font-mono text-[11px] tabular-nums text-ink/58">
 ${b.revenue.toFixed(1)}M / ${b.profit.toFixed(1)}M
                       </p>
                     </div>
@@ -395,7 +396,7 @@ ${b.revenue.toFixed(1)}M / ${b.profit.toFixed(1)}M
                         }}
                       />
                       <div
-                        className="h-4 rounded-sm bg-white/25"
+                        className="h-4 rounded-sm bg-ink/40"
                         style={{ width: `${(b.profit / max) * 100}%` }}
                       />
                     </div>
@@ -406,17 +407,17 @@ ${b.revenue.toFixed(1)}M / ${b.profit.toFixed(1)}M
             <div>
               <div className="grid grid-cols-2 gap-x-8 gap-y-7">
                 {slide.stats.map((s) => (
-                  <div key={s.label} className="border-t border-white/15 pt-4">
-                    <p className="font-display text-2xl font-extrabold tracking-tight text-white md:text-3xl">
+                  <div key={s.label} className="border-t border-ink/18 pt-4">
+                    <p className="font-display text-2xl font-extrabold tracking-tight text-ink md:text-3xl">
                       {s.value}
                     </p>
-                    <p className="mt-2 text-pretty text-xs leading-relaxed text-white/45">
+                    <p className="mt-2 text-pretty text-xs leading-relaxed text-ink/60">
                       {s.label}
                     </p>
                   </div>
                 ))}
               </div>
-              <p className="mt-8 text-pretty text-xs leading-relaxed text-white/35">{slide.note}</p>
+              <p className="mt-8 text-pretty text-xs leading-relaxed text-ink/52">{slide.note}</p>
             </div>
           </div>
           <Source text={slide.source} />
@@ -433,16 +434,16 @@ ${b.revenue.toFixed(1)}M / ${b.profit.toFixed(1)}M
           <div className="mt-10 grid flex-1 grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
             {slide.groups.map((g) => (
               <div key={g.label}>
-                <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/40">
+                <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/58">
                   {g.label}
                 </p>
                 <dl className="mt-5">
                   {g.rows.map((r) => (
                     <div
                       key={r.k}
-                      className="flex items-baseline justify-between gap-6 border-t border-white/10 py-3.5"
+                      className="flex items-baseline justify-between gap-6 border-t border-ink/14 py-3.5"
                     >
-                      <dt className="text-sm text-white/55">{r.k}</dt>
+                      <dt className="text-sm text-ink/68">{r.k}</dt>
                       <dd
                         className="text-right font-display text-sm font-bold md:text-base"
                         style={{ color: accent }}
@@ -455,7 +456,7 @@ ${b.revenue.toFixed(1)}M / ${b.profit.toFixed(1)}M
               </div>
             ))}
           </div>
-          <p className="mt-8 max-w-4xl text-pretty text-sm leading-relaxed text-white/60">
+          <p className="mt-8 max-w-4xl text-pretty text-sm leading-relaxed text-ink/70">
             {slide.focus}
           </p>
           <Source text={slide.source} />
@@ -484,10 +485,10 @@ ${b.revenue.toFixed(1)}M / ${b.profit.toFixed(1)}M
                     style={{ backgroundColor: it.accent }}
                     aria-hidden="true"
                   />
-                  <p className="mt-6 font-display text-xl font-extrabold tracking-tight text-white md:text-2xl">
+                  <p className="mt-6 font-display text-xl font-extrabold tracking-tight text-ink md:text-2xl">
                     {it.name}
                   </p>
-                  <p className="mt-2 text-sm text-white/50">{it.category}</p>
+                  <p className="mt-2 text-sm text-ink/65">{it.category}</p>
                 </div>
                 <p
                   className="mt-10 font-mono text-[10px] uppercase tracking-[0.2em]"
@@ -510,7 +511,7 @@ ${b.revenue.toFixed(1)}M / ${b.profit.toFixed(1)}M
           <Title>{slide.title}</Title>
           <div className="mt-12 grid flex-1 grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
-              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/40">
+              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/58">
                 Capital sought
               </p>
               <p
@@ -519,19 +520,19 @@ ${b.revenue.toFixed(1)}M / ${b.profit.toFixed(1)}M
               >
                 {slide.askValue}
               </p>
-              <p className="mt-5 max-w-md text-pretty text-sm leading-relaxed text-white/55">
+              <p className="mt-5 max-w-md text-pretty text-sm leading-relaxed text-ink/68">
                 {slide.askNote}
               </p>
             </div>
-            <div className="border-t border-white/15 pt-6 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
-              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/40">
+            <div className="border-t border-ink/18 pt-6 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
+              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/58">
                 {slide.useLabel}
               </p>
               <ul className="mt-6 space-y-5">
                 {slide.uses.map((u) => (
                   <li
                     key={u}
-                    className="text-pretty text-sm leading-relaxed text-white/65 md:text-base"
+                    className="text-pretty text-sm leading-relaxed text-ink/72 md:text-base"
                   >
                     {u}
                   </li>
@@ -539,7 +540,7 @@ ${b.revenue.toFixed(1)}M / ${b.profit.toFixed(1)}M
               </ul>
             </div>
           </div>
-          <p className="mt-8 max-w-4xl text-balance font-display text-lg font-bold leading-snug text-white/80 md:text-xl">
+          <p className="mt-8 max-w-4xl text-balance font-display text-lg font-bold leading-snug text-ink/80 md:text-xl">
             {slide.milestone}
           </p>
           <Source text={slide.source} />
