@@ -55,7 +55,7 @@ export function Portfolio() {
                       className="h-1.5 w-1.5 rounded-full"
                       style={{ backgroundColor: b.accentHex }}
                     />
-                    Coming soon
+                    {b.launch ?? 'Coming soon'}
                   </span>
                 ) : (
                   <span

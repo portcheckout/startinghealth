@@ -133,7 +133,7 @@ export function HeroDeck() {
                     className="h-1.5 w-1.5 rounded-full"
                     style={{ backgroundColor: brand.accentHex }}
                   />
-                  Coming soon
+                  {brand.launch ?? 'Coming soon'}
                 </span>
               </div>
             ) : (

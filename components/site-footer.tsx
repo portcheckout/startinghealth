@@ -33,7 +33,7 @@ export function SiteFooter() {
                   <span className="inline-flex items-center gap-2 font-display font-semibold text-muted-foreground">
                     {b.domain}
                     <span className="rounded-full border border-ink/15 px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.15em]">
-                      Soon
+                      {b.launch ?? 'Soon'}
                     </span>
                   </span>
                 ) : (
