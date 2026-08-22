@@ -534,7 +534,15 @@ ${b.revenue.toFixed(1)}M / ${b.profit.toFixed(1)}M
               <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/58">
                 {slide.useLabel}
               </p>
-              <ul className="mt-6 space-y-5">
+              <div className="mt-6 border-l-2 pl-5" style={{ borderColor: accent }}>
+                <p className="text-pretty font-display text-base font-extrabold leading-snug tracking-tight text-ink md:text-lg">
+                  {slide.readiness.headline}
+                </p>
+                <p className="mt-2 text-pretty text-sm leading-relaxed text-ink/68">
+                  {slide.readiness.detail}
+                </p>
+              </div>
+              <ul className="mt-7 space-y-5">
                 {slide.uses.map((u) => (
                   <li
                     key={u}

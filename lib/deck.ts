@@ -139,6 +139,7 @@ export type Slide =
       askValue: string
       askNote: string
       useLabel: string
+      readiness: { headline: string; detail: string }
       uses: string[]
       milestone: string
       source: string
@@ -410,6 +411,11 @@ export const slides: Slide[] = [
     askNote:
       'For 10% equity. Flexible structure to fit the investor: equity, SAFE / convertible note, or strategic growth capital.',
     useLabel: 'Primary use of proceeds',
+    readiness: {
+      headline: 'StartingGLP is built and ready to scale.',
+      detail:
+        'The platform, clinical network, lab, pharmacy, and patient workflow are already in place.',
+    },
     uses: [
       'Patient acquisition for StartingGLP — 80% of proceeds',
       'Clinical, lab, pharmacy, compliance, and customer support operations — 20% of proceeds',
