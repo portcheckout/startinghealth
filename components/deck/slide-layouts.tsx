@@ -75,16 +75,16 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
               {slide.body}
             </p>
 
-            <div className="mt-12 flex flex-wrap items-end gap-x-16 gap-y-8">
+            <div className="mt-12 flex flex-wrap items-start gap-x-16 gap-y-8">
               {slide.stats.map((s) => (
                 <div key={s.label}>
                   <p
-                    className="font-display text-4xl font-extrabold tracking-tight md:text-5xl"
+                    className="font-display text-4xl font-extrabold leading-none tracking-tight md:text-5xl"
                     style={{ color: accent }}
                   >
                     {s.value}
                   </p>
-                  <p className="mt-2 max-w-[13rem] font-mono text-[11px] uppercase tracking-[0.18em] text-ink/60">
+                  <p className="mt-3 max-w-[15rem] font-mono text-[11px] uppercase leading-relaxed tracking-[0.18em] text-ink/60">
                     {s.label}
                   </p>
                 </div>

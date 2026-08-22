@@ -159,9 +159,24 @@ export const slides: Slide[] = [
     source: 'Starting.Health site; StartingGLP site; management model outputs.',
   },
   {
+    kind: 'founder',
+    id: 'people',
+    chapter: '01',
+    eyebrow: 'People first',
+    title: 'Proven founders. Consumer-first healthcare. Built to scale.',
+    name: 'Bryan Lenett',
+    role: 'Founder',
+    paragraphs: [
+      'Bryan Lenett is a three-time exited entrepreneur with experience building and scaling technology-driven businesses across healthcare, digital commerce, and online marketplaces. He founded PharmacyBenefits, one of the first real-time pharmacy benefits platforms in healthcare, serving major clients including CVS and UnitedHealthcare. He later co-founded TreatMD, a telemedicine company acquired by GlobalMed, and Boatzon, a digital marine marketplace sold to MarineMax (NYSE: HZO).',
+      'Across his ventures, Bryan has focused on identifying fragmented industries and building consumer-first technology platforms that simplify complex transactions and services. At Starting.Health he is applying that experience to build a scalable consumer healthcare platform spanning GLP-1 treatment, peptides, TRT, diagnostics, and longitudinal health monitoring.',
+    ],
+    note: 'Additional leadership to be announced.',
+    source: 'StartingGLP site messaging; management analysis.',
+  },
+  {
     kind: 'stats',
     id: 'why-now',
-    chapter: '01',
+    chapter: '02',
     eyebrow: 'Market setup',
     title: 'Why now: a decade-long metabolic health tailwind.',
     stats: [
@@ -173,21 +188,6 @@ export const slides: Slide[] = [
     body: 'The GLP era is opening a larger direct-to-patient category: medication access is increasingly commoditized, but trusted clinical onboarding, diagnostics, monitoring, retention, and expansion into adjacent protocols remain under-built.',
     source:
       'CDC NCHS Data Brief 508; J.P. Morgan obesity drugs insight; Morgan Stanley GLP-1 forecast; Goldman Sachs anti-obesity market forecast.',
-  },
-  {
-    kind: 'founder',
-    id: 'people',
-    chapter: '02',
-    eyebrow: 'People first',
-    title: 'Proven founders. Consumer-first healthcare. Built to scale.',
-    name: 'Bryan Lenett',
-    role: 'Founder',
-    paragraphs: [
-      'Bryan Lenett is a three-time exited entrepreneur with experience building and scaling technology-driven businesses across healthcare, digital commerce, and online marketplaces. He founded PharmacyBenefits, one of the first real-time pharmacy benefits platforms in healthcare, serving major clients including CVS and UnitedHealthcare. He later co-founded TreatMD, a telemedicine company acquired by GlobalMed, and Boatzon, a digital marine marketplace sold to MarineMax (NYSE: HZO).',
-      'Across his ventures, Bryan has focused on identifying fragmented industries and building consumer-first technology platforms that simplify complex transactions and services. At Starting.Health he is applying that experience to build a scalable consumer healthcare platform spanning GLP-1 treatment, peptides, TRT, diagnostics, and longitudinal health monitoring.',
-    ],
-    note: 'Additional leadership to be announced.',
-    source: 'StartingGLP site messaging; management analysis.',
   },
   {
     kind: 'versus',
