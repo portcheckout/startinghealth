@@ -414,7 +414,7 @@ export const slides: Slide[] = [
     readiness: {
       headline: 'StartingGLP is built and ready to scale.',
       detail:
-        'The platform, clinical network, lab, pharmacy, and patient workflow are already in place.',
+        'The platform, clinical network, lab, pharmacy, and patient workflow are already in place. — 0%',
     },
     uses: [
       'Patient acquisition for StartingGLP — 80% of proceeds',
