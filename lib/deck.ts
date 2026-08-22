@@ -121,7 +121,13 @@ export type Slide =
       chapter: string
       eyebrow: string
       title: string
-      items: { name: string; category: string; status: string; accent: string }[]
+      items: {
+        name: string
+        domain: string
+        category: string
+        status: string
+        accent: string
+      }[]
       source: string
     }
   | {
@@ -372,18 +378,21 @@ export const slides: Slide[] = [
     items: [
       {
         name: 'StartingGLP',
+        domain: 'StartingGLP.com',
         category: 'Metabolic health',
         status: 'Live / first brand',
         accent: '#0d7a52',
       },
       {
         name: 'Starting Peptide',
+        domain: 'StartingPeptide.com',
         category: 'Recovery, performance, longevity',
         status: 'Next roadmap brand',
         accent: '#3350cf',
       },
       {
         name: 'Starting TRT',
+        domain: 'StartingTRT.com',
         category: 'Energy, strength, focus',
         status: 'Next roadmap brand',
         accent: '#9a5c14',

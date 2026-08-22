@@ -488,7 +488,13 @@ ${b.revenue.toFixed(1)}M / ${b.profit.toFixed(1)}M
                   <p className="mt-6 font-display text-xl font-extrabold tracking-tight text-ink md:text-2xl">
                     {it.name}
                   </p>
-                  <p className="mt-2 text-sm text-ink/65">{it.category}</p>
+                  <p
+                    className="mt-2 font-mono text-xs tracking-tight"
+                    style={{ color: it.accent }}
+                  >
+                    {it.domain}
+                  </p>
+                  <p className="mt-3 text-sm text-ink/65">{it.category}</p>
                 </div>
                 <p
                   className="mt-10 font-mono text-[10px] uppercase tracking-[0.2em]"
