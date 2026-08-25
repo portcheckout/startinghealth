@@ -126,26 +126,33 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
         <Shell chapter={slide.chapter}>
           <Eyebrow text={slide.eyebrow} accent={accent} />
           <Title>{slide.title}</Title>
-          <div className="mt-10 grid flex-1 grid-cols-1 gap-10 lg:grid-cols-[1fr_1.6fr]">
-            <div>
-              <p className="font-display text-2xl font-extrabold tracking-tight text-ink md:text-3xl">
-                {slide.name}
-              </p>
-              <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.25em]" style={{ color: accent }}>
-                {slide.role}
-              </p>
-              <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/52">
-                {slide.note}
-              </p>
-            </div>
-            <div className="space-y-5 border-l border-ink/18 pl-0 lg:pl-10">
-              {slide.paragraphs.map((p, i) => (
-                <p key={i} className="text-pretty text-sm leading-relaxed text-ink/70 md:text-base">
-                  {p}
-                </p>
-              ))}
-            </div>
+          <div className="mt-9 grid grid-cols-1 gap-9 lg:grid-cols-2 lg:gap-14">
+            {slide.people.map((person) => (
+              <div key={person.name}>
+                <div className="border-t-2 pt-4" style={{ borderColor: accent }}>
+                  <p className="font-display text-xl font-extrabold tracking-tight text-ink md:text-2xl">
+                    {person.name}
+                  </p>
+                  <p
+                    className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.22em]"
+                    style={{ color: accent }}
+                  >
+                    {person.role}
+                  </p>
+                </div>
+                <div className="mt-4 space-y-3.5">
+                  {person.paragraphs.map((p, i) => (
+                    <p key={i} className="text-pretty text-[13px] leading-relaxed text-ink/70">
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
+          <p className="mt-9 border-t border-ink/14 pt-5 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/52">
+            {slide.note}
+          </p>
           <Source text={slide.source} />
         </Shell>
       )
@@ -282,6 +289,159 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
                 ))}
               </ul>
             </div>
+          </div>
+          <Source text={slide.source} />
+        </Shell>
+      )
+
+    /* ---------------- ACQUISITION (search intent) ---------------- */
+    case 'acquisition':
+      return (
+        <Shell chapter={slide.chapter}>
+          <Eyebrow text={slide.eyebrow} accent={accent} />
+          <Title>{slide.title}</Title>
+          <p className="mt-5 max-w-3xl text-pretty leading-relaxed text-ink/70">{slide.lede}</p>
+
+          <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
+            {/* Keyword intent table */}
+            <div>
+              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/58">
+                {slide.keywordsLabel}
+              </p>
+              <ul className="mt-5">
+                {slide.keywords.map((k) => (
+                  <li
+                    key={k.term}
+                    className="grid grid-cols-[1fr_auto_auto] items-baseline gap-x-5 border-t border-ink/14 py-3"
+                  >
+                    <span className="text-pretty text-sm text-ink/75 md:text-base">{k.term}</span>
+                    <span
+                      className="font-display text-xl font-extrabold tabular-nums tracking-tight md:text-2xl"
+                      style={{ color: accent }}
+                    >
+                      {k.volume}
+                    </span>
+                    <span className="w-20 text-right font-mono text-[10px] uppercase tracking-[0.15em] text-ink/52">
+                      bid {k.bid}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 font-mono text-[10px] leading-relaxed text-ink/45">
+                {slide.keywordsNote}
+              </p>
+            </div>
+
+            {/* Funnel path */}
+            <div
+              className="rounded-2xl p-7 md:p-8"
+              style={{ backgroundColor: `${accent}12`, border: `1px solid ${accent}38` }}
+            >
+              <p
+                className="font-mono text-[11px] uppercase tracking-[0.25em]"
+                style={{ color: accent }}
+              >
+                {slide.pathLabel}
+              </p>
+              <ol className="mt-5">
+                {slide.path.map((p, i) => (
+                  <li
+                    key={p.step}
+                    className={`grid grid-cols-[4.5rem_1fr] items-baseline gap-x-4 py-2.5 ${
+                      i > 0 ? 'border-t border-ink/12' : ''
+                    }`}
+                  >
+                    <span
+                      className="font-mono text-[10px] uppercase tracking-[0.18em]"
+                      style={{ color: accent }}
+                    >
+                      {p.step}
+                    </span>
+                    <span className="text-pretty text-sm leading-relaxed text-ink/75">{p.body}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/58">
+              {slide.kickerLabel}
+            </p>
+            <p className="mt-3 max-w-4xl text-pretty font-display text-base font-bold leading-snug text-ink/85 md:text-lg">
+              {slide.kicker}
+            </p>
+          </div>
+          <Source text={slide.source} />
+        </Shell>
+      )
+
+    /* ---------------- SOCIAL (creative + channels) ---------------- */
+    case 'social':
+      return (
+        <Shell chapter={slide.chapter}>
+          <Eyebrow text={slide.eyebrow} accent={accent} />
+          <Title>{slide.title}</Title>
+          <p className="mt-5 max-w-3xl text-pretty leading-relaxed text-ink/70">{slide.lede}</p>
+
+          <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-14">
+            {/* Ad creative concept */}
+            <div
+              className="rounded-2xl p-7 md:p-8"
+              style={{ backgroundColor: `${accent}12`, border: `1px solid ${accent}38` }}
+            >
+              <p
+                className="font-mono text-[11px] uppercase tracking-[0.25em]"
+                style={{ color: accent }}
+              >
+                {slide.creative.label}
+              </p>
+              <div className="mt-5 space-y-1">
+                {slide.creative.hooks.map((h) => (
+                  <p key={h} className="text-sm leading-relaxed text-ink/68">
+                    {h}
+                  </p>
+                ))}
+              </div>
+              <p className="mt-4 text-balance font-display text-lg font-extrabold leading-tight text-ink md:text-xl">
+                {slide.creative.punch}
+              </p>
+              <p className="mt-4 text-pretty text-sm leading-relaxed text-ink/70">
+                {slide.creative.offer}
+              </p>
+              <p
+                className="mt-5 font-mono text-[11px] uppercase tracking-[0.2em]"
+                style={{ color: accent }}
+              >
+                {slide.creative.cta}
+              </p>
+            </div>
+
+            {/* Channel breakdown */}
+            <div>
+              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/58">
+                {slide.channelsLabel}
+              </p>
+              <ul className="mt-5">
+                {slide.channels.map((c) => (
+                  <li key={c.name} className="border-t border-ink/14 py-4">
+                    <p className="font-display text-base font-bold text-ink md:text-lg">{c.name}</p>
+                    <p className="mt-1.5 text-pretty text-sm leading-relaxed text-ink/65">
+                      {c.body}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ink/58">
+              {slide.kickerLabel}
+            </p>
+            <p className="mt-3 max-w-4xl text-pretty font-display text-base font-bold leading-snug text-ink/85 md:text-lg">
+              {slide.kicker}
+            </p>
           </div>
           <Source text={slide.source} />
         </Shell>

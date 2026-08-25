@@ -31,9 +31,7 @@ export type Slide =
       chapter: string
       eyebrow: string
       title: string
-      name: string
-      role: string
-      paragraphs: string[]
+      people: { name: string; role: string; paragraphs: string[] }[]
       note: string
       source: string
     }
@@ -71,6 +69,42 @@ export type Slide =
       prices: { amount: string; term: string }[]
       designLabel: string
       design: string[]
+      source: string
+    }
+  | {
+      kind: 'acquisition'
+      id: string
+      chapter: string
+      eyebrow: string
+      title: string
+      lede: string
+      keywordsLabel: string
+      keywords: { term: string; volume: string; bid: string }[]
+      keywordsNote: string
+      pathLabel: string
+      path: { step: string; body: string }[]
+      kickerLabel: string
+      kicker: string
+      source: string
+    }
+  | {
+      kind: 'social'
+      id: string
+      chapter: string
+      eyebrow: string
+      title: string
+      lede: string
+      creative: {
+        label: string
+        hooks: string[]
+        punch: string
+        offer: string
+        cta: string
+      }
+      channelsLabel: string
+      channels: { name: string; body: string }[]
+      kickerLabel: string
+      kicker: string
       source: string
     }
   | {
@@ -164,11 +198,23 @@ export const slides: Slide[] = [
     chapter: '01',
     eyebrow: 'People first',
     title: 'Proven founders. Consumer-first healthcare. Built to scale.',
-    name: 'Bryan Lenett',
-    role: 'Founder',
-    paragraphs: [
-      'Bryan Lenett is a three-time exited entrepreneur with experience building and scaling technology-driven businesses across healthcare, digital commerce, and online marketplaces. He founded PharmacyBenefits, one of the first real-time pharmacy benefits platforms in healthcare, serving major clients including CVS and UnitedHealthcare. He later co-founded TreatMD, a telemedicine company acquired by GlobalMed, and Boatzon, a digital marine marketplace sold to MarineMax (NYSE: HZO).',
-      'Across his ventures, Bryan has focused on identifying fragmented industries and building consumer-first technology platforms that simplify complex transactions and services. At Starting.Health he is applying that experience to build a scalable consumer healthcare platform spanning GLP-1 treatment, peptides, TRT, diagnostics, and longitudinal health monitoring.',
+    people: [
+      {
+        name: 'Bryan Lenett',
+        role: 'Founder',
+        paragraphs: [
+          'Bryan Lenett is a three-time exited entrepreneur with experience building and scaling technology-driven businesses across healthcare, digital commerce, and online marketplaces. He founded PharmacyBenefits, one of the first real-time pharmacy benefits platforms in healthcare, serving major clients including CVS and UnitedHealthcare. He later co-founded TreatMD, a telemedicine company acquired by GlobalMed, and Boatzon, a digital marine marketplace sold to MarineMax (NYSE: HZO).',
+          'Across his ventures, Bryan has focused on identifying fragmented industries and building consumer-first technology platforms that simplify complex transactions and services. At Starting.Health he is applying that experience to build a scalable consumer healthcare platform spanning GLP-1 treatment, peptides, TRT, diagnostics, and longitudinal health monitoring.',
+        ],
+      },
+      {
+        name: 'Kirill Volgensky',
+        role: 'Growth & Digital Strategy',
+        paragraphs: [
+          'Kirill is a prominent figure in the direct-response and performance marketing space, with over two decades of experience building customer-acquisition and revenue strategies across digital media and e-commerce. He has deep relationships across leading ad networks, prominent digital publishers, and performance marketing channels.',
+          'While currently advising MyRegistry.com, he leads digital sales and partnership strategy and works with major healthcare and consumer brands including Hims, Ro, and WeightWatchers. His experience spans performance marketing, digital monetization, advertiser strategy, and building scalable acquisition programs. At Starting.Health, Kirill focuses on customer acquisition, growth strategy, and building repeatable marketing channels across StartingGLP and future portfolio brands.',
+        ],
+      },
     ],
     note: 'Additional leadership to be announced.',
     source: 'StartingGLP site messaging; management analysis.',
@@ -253,9 +299,78 @@ export const slides: Slide[] = [
     source: 'StartingGLP site product/pricing; management revenue model.',
   },
   {
+    kind: 'acquisition',
+    id: 'acquisition',
+    chapter: '06',
+    eyebrow: 'Acquisition opportunity',
+    title: 'A different front door to the GLP market.',
+    lede: 'Most competitors fight for the prescription. StartingGLP can acquire patients earlier — when they are researching the decision.',
+    keywordsLabel: 'High-volume consumer intent',
+    keywords: [
+      { term: 'GLP-1 side effects', volume: '500K', bid: '$0.22' },
+      { term: 'Ozempic side effects', volume: '500K', bid: '$0.34' },
+      { term: 'Tirzepatide side effects', volume: '500K', bid: '$0.10' },
+      { term: 'Semaglutide side effects', volume: '50K', bid: '$0.40' },
+    ],
+    keywordsNote:
+      'Google Keyword Planner average monthly searches, Aug. 2025 – Jul. 2026. Bids shown are low-range estimates.',
+    pathLabel: 'The StartingGLP path',
+    path: [
+      { step: 'Search', body: '“GLP-1 side effects”' },
+      { step: 'Educate', body: 'What should I know before starting?' },
+      { step: 'Offer', body: 'Free GLP lab and physician consultation' },
+      { step: 'Treat', body: 'Personalized plan if medically appropriate' },
+      { step: 'Retain', body: 'Ongoing health monitoring' },
+    ],
+    kickerLabel: 'The opportunity',
+    kicker:
+      'Instead of outbidding established brands for the same medication shopper, StartingGLP can meet consumers earlier — at the moment they begin questioning whether GLP treatment is right for them.',
+    source:
+      'Google Keyword Planner export, Aug. 25, 2026; management acquisition strategy. Search volumes and bid estimates are directional; actual CPC and CAC require campaign validation.',
+  },
+  {
+    kind: 'social',
+    id: 'social',
+    chapter: '07',
+    eyebrow: 'Social acquisition',
+    title: 'Turn GLP-1 concerns into a differentiated message.',
+    lede: 'The same concern-based positioning can travel beyond search. StartingGLP can use the free-lab message to acquire consumers across Instagram, Facebook, and TikTok.',
+    creative: {
+      label: 'Social creative concept',
+      hooks: [
+        'Thinking of starting a GLP-1?',
+        'Concerned about side effects or your health?',
+      ],
+      punch: 'Most GLP-1 brands start with a quiz. We start with your blood — and a free GLP lab test.',
+      offer:
+        'Get a free GLP lab test, physician consultation, and a personalized GLP treatment plan — all from home.',
+      cta: 'Start your GLP-1 the responsible way.',
+    },
+    channelsLabel: 'One positioning. Multiple channels.',
+    channels: [
+      {
+        name: 'Instagram / Facebook',
+        body: 'Lead with the free lab and responsible-start message.',
+      },
+      {
+        name: 'TikTok / Reels',
+        body: 'Educational short-form content around what to know before starting.',
+      },
+      {
+        name: 'Google',
+        body: 'Capture consumers already researching GLP-1 side effects and health concerns.',
+      },
+    ],
+    kickerLabel: 'Investor takeaway',
+    kicker:
+      'StartingGLP does not have to compete only on medication price. The lab-first model creates a distinct acquisition message across both search and social.',
+    source:
+      'Management marketing strategy and creative concept. Campaign performance and CAC require validation.',
+  },
+  {
     kind: 'steps',
     id: 'lifecycle',
-    chapter: '06',
+    chapter: '08',
     eyebrow: 'Lifecycle',
     title: 'The customer journey turns a transaction into a relationship.',
     steps: [
@@ -278,7 +393,7 @@ export const slides: Slide[] = [
   {
     kind: 'ladder',
     id: 'revenue',
-    chapter: '07',
+    chapter: '09',
     eyebrow: 'Revenue ladder',
     title: 'Multiple revenue paths from the same acquired patient.',
     rungs: [
@@ -320,7 +435,7 @@ export const slides: Slide[] = [
   {
     kind: 'financial',
     id: 'model',
-    chapter: '08',
+    chapter: '10',
     eyebrow: '24-month projection',
     title: 'Operating leverage appears in year two.',
     bars: [
@@ -341,7 +456,7 @@ export const slides: Slide[] = [
   {
     kind: 'assumptions',
     id: 'assumptions',
-    chapter: '09',
+    chapter: '11',
     eyebrow: 'Model quality',
     title: 'Key assumptions are visible and adjustable.',
     groups: [
@@ -373,7 +488,7 @@ export const slides: Slide[] = [
   {
     kind: 'roadmap',
     id: 'roadmap',
-    chapter: '10',
+    chapter: '12',
     eyebrow: 'Portfolio expansion',
     title: 'Starting Peptide and Starting TRT plug into the same rails.',
     items: [
@@ -404,7 +519,7 @@ export const slides: Slide[] = [
   {
     kind: 'funds',
     id: 'use-of-funds',
-    chapter: '11',
+    chapter: '13',
     eyebrow: 'Use of funds',
     title: 'Fund the operating engine, not a single campaign.',
     askValue: '$750K',
