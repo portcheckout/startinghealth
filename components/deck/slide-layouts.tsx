@@ -126,26 +126,33 @@ export function DeckSlide({ slide, index }: { slide: Slide; index: number }) {
         <Shell chapter={slide.chapter}>
           <Eyebrow text={slide.eyebrow} accent={accent} />
           <Title>{slide.title}</Title>
-          <div className="mt-10 grid flex-1 grid-cols-1 gap-10 lg:grid-cols-[1fr_1.6fr]">
-            <div>
-              <p className="font-display text-2xl font-extrabold tracking-tight text-ink md:text-3xl">
-                {slide.name}
-              </p>
-              <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.25em]" style={{ color: accent }}>
-                {slide.role}
-              </p>
-              <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/52">
-                {slide.note}
-              </p>
-            </div>
-            <div className="space-y-5 border-l border-ink/18 pl-0 lg:pl-10">
-              {slide.paragraphs.map((p, i) => (
-                <p key={i} className="text-pretty text-sm leading-relaxed text-ink/70 md:text-base">
-                  {p}
-                </p>
-              ))}
-            </div>
+          <div className="mt-9 grid grid-cols-1 gap-9 lg:grid-cols-2 lg:gap-14">
+            {slide.people.map((person) => (
+              <div key={person.name}>
+                <div className="border-t-2 pt-4" style={{ borderColor: accent }}>
+                  <p className="font-display text-xl font-extrabold tracking-tight text-ink md:text-2xl">
+                    {person.name}
+                  </p>
+                  <p
+                    className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.22em]"
+                    style={{ color: accent }}
+                  >
+                    {person.role}
+                  </p>
+                </div>
+                <div className="mt-4 space-y-3.5">
+                  {person.paragraphs.map((p, i) => (
+                    <p key={i} className="text-pretty text-[13px] leading-relaxed text-ink/70">
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
+          <p className="mt-9 border-t border-ink/14 pt-5 font-mono text-[11px] uppercase tracking-[0.2em] text-ink/52">
+            {slide.note}
+          </p>
           <Source text={slide.source} />
         </Shell>
       )

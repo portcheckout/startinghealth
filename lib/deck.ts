@@ -31,9 +31,7 @@ export type Slide =
       chapter: string
       eyebrow: string
       title: string
-      name: string
-      role: string
-      paragraphs: string[]
+      people: { name: string; role: string; paragraphs: string[] }[]
       note: string
       source: string
     }
@@ -200,11 +198,23 @@ export const slides: Slide[] = [
     chapter: '01',
     eyebrow: 'People first',
     title: 'Proven founders. Consumer-first healthcare. Built to scale.',
-    name: 'Bryan Lenett',
-    role: 'Founder',
-    paragraphs: [
-      'Bryan Lenett is a three-time exited entrepreneur with experience building and scaling technology-driven businesses across healthcare, digital commerce, and online marketplaces. He founded PharmacyBenefits, one of the first real-time pharmacy benefits platforms in healthcare, serving major clients including CVS and UnitedHealthcare. He later co-founded TreatMD, a telemedicine company acquired by GlobalMed, and Boatzon, a digital marine marketplace sold to MarineMax (NYSE: HZO).',
-      'Across his ventures, Bryan has focused on identifying fragmented industries and building consumer-first technology platforms that simplify complex transactions and services. At Starting.Health he is applying that experience to build a scalable consumer healthcare platform spanning GLP-1 treatment, peptides, TRT, diagnostics, and longitudinal health monitoring.',
+    people: [
+      {
+        name: 'Bryan Lenett',
+        role: 'Founder',
+        paragraphs: [
+          'Bryan Lenett is a three-time exited entrepreneur with experience building and scaling technology-driven businesses across healthcare, digital commerce, and online marketplaces. He founded PharmacyBenefits, one of the first real-time pharmacy benefits platforms in healthcare, serving major clients including CVS and UnitedHealthcare. He later co-founded TreatMD, a telemedicine company acquired by GlobalMed, and Boatzon, a digital marine marketplace sold to MarineMax (NYSE: HZO).',
+          'Across his ventures, Bryan has focused on identifying fragmented industries and building consumer-first technology platforms that simplify complex transactions and services. At Starting.Health he is applying that experience to build a scalable consumer healthcare platform spanning GLP-1 treatment, peptides, TRT, diagnostics, and longitudinal health monitoring.',
+        ],
+      },
+      {
+        name: 'Kirill Volgensky',
+        role: 'Growth & Digital Strategy',
+        paragraphs: [
+          'Kirill is a prominent figure in the direct-response and performance marketing space, with over two decades of experience building customer-acquisition and revenue strategies across digital media and e-commerce. He has deep relationships across leading ad networks, prominent digital publishers, and performance marketing channels.',
+          'While currently advising MyRegistry.com, he leads digital sales and partnership strategy and works with major healthcare and consumer brands including Hims, Ro, and WeightWatchers. His experience spans performance marketing, digital monetization, advertiser strategy, and building scalable acquisition programs. At Starting.Health, Kirill focuses on customer acquisition, growth strategy, and building repeatable marketing channels across StartingGLP and future portfolio brands.',
+        ],
+      },
     ],
     note: 'Additional leadership to be announced.',
     source: 'StartingGLP site messaging; management analysis.',
